@@ -1,3 +1,4 @@
+#pragma once
 #include <boost/iterator/iterator_facade.hpp>
 #include <boost/range/iterator_range.hpp>
 #include <SFML/Graphics.hpp>
@@ -51,5 +52,13 @@ auto points_of(const sf::Shape& shape)
 
 using ShapePoints = decltype(points_of(sf::CircleShape()));
 
+//register as ring
 
-BOOST_GEOMETRY_REGISTER_RING(ShapePoints)
+namespace boost {
+namespace geometry {
+namespace traits {
+template<> struct tag<ShapePoints> { typedef ring_tag type; };
+template<> struct closure<ShapePoints> { static const closure_selector value = open; };
+}
+}
+}

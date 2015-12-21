@@ -1,3 +1,4 @@
+#pragma once
 #include <boost/geometry/geometries/register/point.hpp>
 #include <SFML/System/Vector2.hpp>
 

@@ -1,9 +1,11 @@
+#pragma once
+
 namespace boost
 {
-    namespace geometry
-    {
-        namespace traits
-        {
+namespace geometry
+{
+namespace traits
+{
 template<> struct tag<sf::FloatRect> { typedef box_tag type; }; \
 template<> struct point_type<sf::FloatRect > { typedef sf::Vector2f type; };
 
@@ -31,5 +33,5 @@ template <> struct indexed_access<sf::FloatRect, max_corner, 1> \
     static inline ct get(sf::FloatRect const& b) { return b.top; } \
     static inline void set(sf::FloatRect& b, ct const& value) { b.top = value; } \
 };
-        }
-    }
+}
+}
