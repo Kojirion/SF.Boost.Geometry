@@ -2,8 +2,9 @@ set(examples
     boxes
     shapes
     dummy
+    shapes2
+    invaders
 )
-
 
 foreach(example ${examples})
     add_executable(${example} ${example}.cpp)

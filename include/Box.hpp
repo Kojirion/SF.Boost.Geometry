@@ -1,5 +1,6 @@
 #pragma once
 #include "Point.hpp"
+#include <boost/geometry.hpp>
 #include <SFML/Graphics/Rect.hpp>
 
 namespace boost
@@ -35,5 +36,6 @@ template <> struct indexed_access<sf::FloatRect, max_corner, 1>
     static inline ct get(sf::FloatRect const& b) { return b.top; }
     static inline void set(sf::FloatRect& b, ct const& value) { b.top = value; }
 };
+}
 }
 }
